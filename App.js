@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
-import XOgame from './component/XOgame'
-import Movieapp from './component/Movieapp'
+import XOgame from './app/XOgame'
+import Movieapp from './app/Movieapp'
 import Movie from './component/Movie'
 
 const App = () => {

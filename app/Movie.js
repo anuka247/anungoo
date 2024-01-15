@@ -2,13 +2,13 @@ import { StyleSheet, Text, View, TextInput, ScrollView, StatusBar } from "react-
 import React from "react";
 import Movieapp from "./Movieapp";
 import { useState } from "react";
-
+  
 const Movie = () => {
   const movies = [
     {
       image: require("../component/img/avengers.jpg"),
       name: "The Avengers",
-      description: "Superheroes team up to save the world.",
+      description: "Superheroes team up to save the world.  ",
     },
     {
       image: require("../component/img/spider-man.jpg"),
@@ -29,10 +29,12 @@ const Movie = () => {
     },
   ];
   const [text, setText] = useState("");
+  // let result = text.toLocaleLowerCase();
   const onSearch = (e) => {
     const text = e.target.value;
     setText(text);
   };
+
   const list = movies.filter((movie) =>
     movie.name.toLowerCase().includes(text.toLocaleLowerCase())
   );
@@ -43,7 +45,13 @@ const Movie = () => {
       <Text style={styles.Texth3}>Адал явдалт, тулаант</Text>
       <TextInput style={[styles.hailt , styles.shadow]} type="text" onChange={onSearch} placeholder="Хайлт" />
 
-      <ScrollView style={styles.movieList}>
+      <ScrollView 
+
+      //  horizontal={true}
+
+  showsHorizontalScrollIndicator={false}
+  pagingEnabled={true}
+  style={styles.movieList}>
         <View
           style={{
             display: "flex",
@@ -71,8 +79,8 @@ const styles = StyleSheet.create({
         paddingTop: StatusBar.currentHeight,
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor:'#0d1b2a'
-  
+        backgroundColor:'#0d1b2a',
+      
     }, 
     shadowapp:{
         shadowColor: "#e9ecef",
