@@ -3,6 +3,7 @@
     "name": "Project1",
     "slug": "Project1",
     "version": "1.0.0",
+    "scheme": "your-app-scheme",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -36,6 +37,11 @@
     },
     "updates": {
       "url": "https://u.expo.dev/c2a0a35c-9cd1-4cbe-9c17-61149694574f"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
+   
+    
   }
 }

@@ -21,8 +21,8 @@ export default Movieapp
 
 const styles = StyleSheet.create({
   img:{
-    width: 330,
-    height: 300,
+    width: 380,
+    height: 350,
   },
   deed:{
     backgroundColor:'#343a40'
@@ -44,9 +44,9 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         padding: 10,
         margin: 10,
-        width: 350,
-        flexDirection: 'column',
+        width: 400,
         justifyContent: 'center',
+        alignItems:'center',
         backgroundColor: '#343a40',
       
       },
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         height: 60,
         borderRadius: 8,
         objectFit: 'cover',
-    
+
       },
       
       movieaCardh2: {
