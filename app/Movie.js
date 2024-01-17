@@ -43,7 +43,7 @@ const Movie = () => {
       <Text style={styles.Texth3}>Адал явдалт, тулаант</Text>
       <TextInput style={[styles.hailt , styles.shadow]} type="text" onChange={onSearch} placeholder="Хайлт" />
 
-      <ScrollView style={styles.movieList}>
+      <ScrollView horizontal={true}   style={styles.movieList}>
         <View
           style={{
             display: "flex",
