@@ -1,11 +1,27 @@
-import { StyleSheet, Text, View ,Image, TouchableOpacity, TextComponent, TouchableOpacityBase} from 'react-native'
+import { StyleSheet, Text, View ,Image, TouchableOpacity,  TabView ,ScrollView } from 'react-native'
 import React from 'react'
 import { Entypo } from '@expo/vector-icons';
-import PagerView from 'react-native-pager-view';
+import Post from '../post';
+import { FlatList } from 'react-native-gesture-handler';
 
 const About = () => {
+    
+    const postimages=[
+       'https://plus.unsplash.com/premium_photo-1692455906215-dff2237582d7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1523032217284-d9e49d6c5f04?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1533536201350-93ebe24101f5?q=80&w=1366&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1530510004231-720218d936da?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1609813744174-a0df83d477fe?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1533158307587-828f0a76ef46?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1704439735567-11af78b213e3?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1678801868960-a0ab87e23f02?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    ]
     return (
-        <View style={styles.container} >
+        <ScrollView   contentContainerStyle={styles.container}>
+        
+        
             {/* zurag post follow heseg  */}
             <View style={styles.followerHeader} >
             <Image style={styles.img} source={require('../img/my-img.jpg')}/>
@@ -59,51 +75,29 @@ const About = () => {
                 Suggested Highlights
                 </Text>
                <Entypo name="chevron-down" size={24} color="black" /> 
-            </View>
-
-              {/* tab pages */}
-            <View style={styles.tab}>
-                 <View style={styles.tabicon}>
-                 <TouchableOpacity style={styles.tabbtn} > 
-                <Image style={styles.icon} source={require('../home/img/postIcon.png')}/>
-                </TouchableOpacity> 
-
-                <TouchableOpacity style={styles.tabbtn} >  
-                <Image style={styles.icon} source={require('../home/img/userIcon.png')}/>
-                </TouchableOpacity> 
-                </View>
-              
-              
-            <PagerView style={styles.viewPager} initialPage={0}>
-        <View style={styles.page} key="1">
-          <Text>First page</Text>
-          <Text>Swipe ➡️</Text>
-        </View>
-        <View style={styles.page} key="2">
-          <Text>Second page</Text>
-        </View>
-        <View style={styles.page} key="3">
-          <Text>Third page</Text>
-        </View>
-      </PagerView>
-
-            </View>
-        </View>
-      
+               
+           </View>
+           <Post images={postimages}/>
+            </ScrollView>
     )
 }
 
 export default About
 
 const styles = StyleSheet.create({
+    scrollView:{
+        flex:1,
+        backgroundColor:'blue'
+      },
+   
     viewPager: {
         flex: 1,
-        backgroundColor:'red',
+       
       },
       page: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'red',
+        
       },
 
     container:{
@@ -178,16 +172,54 @@ const styles = StyleSheet.create({
         margin:8,
     },
     icon:{
-      width:30,
-      height:30,
+      width:27,
+      height:27,
     },
-    tabicon:{
-        flexDirection:'row',
-        justifyContent:'space-around',
-        backgroundColor:'gray',
-    },
-    tab:{
+    // tabicon:{
+    //     flexDirection:'row',
+    //     justifyContent:'space-around',
+    //     backgroundColor:'gray',
+    // },
+    // tabbtn:{
+    //     flex:1,
+    //     alignItems:'center',
+    //     paddingBottom:12,
         
-    },
+    // },
+    // activetab:{
+    //     borderBottomColor:'white',
+    //     borderBottomWidth:2,
+
+    // },
+    // tabcontainer:{
+    //     flexDirection:'row',
+    //     justifyContent:'space-around',
+    //     backgroundColor:'gray',
+    //     padding:12,
+    //     paddingBottom:1,
+    // },
+
+
+    // btn: {
+    //     flex: 1,
+    //     alignItems: 'center',
+    //     paddingBottom: 16,
+    //     paddingTop: 14
+    // },
+    // active: {
+    //     borderBottomWidth: 2,
+
+    // },
+    // btnContainer: {
+    //     flexDirection: 'row',
+    //     justifyContent: 'space-around'
+    // },
+    // img: { backgroundColor: 'black' },
+    // container: {
+    //     flex: 1
+    // },
+    // pagerView: {
+    //     flex: 1,
+    // },
 
 })
