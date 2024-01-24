@@ -4,7 +4,11 @@ import React from 'react'
 const Home = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.garchig} >Нүүр хуудас:</Text>
+            <View style={styles.garchig}>
+            <Text style={styles.garchig} > Instagram </Text>
+            
+            </View>
+         
         </View>
     )
 }

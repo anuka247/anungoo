@@ -4,7 +4,7 @@ import { Entypo } from '@expo/vector-icons';
 import Post from '../post';
 import { FlatList } from 'react-native-gesture-handler';
 
-const About = () => {
+const Profile = () => {
     
     const postimages=[
        'https://plus.unsplash.com/premium_photo-1692455906215-dff2237582d7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -82,7 +82,7 @@ const About = () => {
     )
 }
 
-export default About
+export default Profile
 
 const styles = StyleSheet.create({
     scrollView:{
