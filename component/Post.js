@@ -1,11 +1,13 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import PagerView from 'react-native-pager-view';
+import ProfileImage from '../app/posts';
 
-const postIcon = require('../home/img/postIcon.png')
-const userIcon = require('../home/img/userIcon.png')
 
-const Post = ({images}) => {
+const postIcon = require('../app/home/img/postIcon.png')
+const userIcon = require('../app/home/img/userIcon.png')
+
+const Post  = ({data}) => {
 
     const [selectedTab, setSetselectedTab] = useState(0)
     const onPageChange = (data) => {
@@ -28,9 +30,9 @@ const Post = ({images}) => {
             <PagerView onPageSelected={onPageChange} style={styles.pagerView} initialPage={0}>
                 <View key="1" style={styles.postcontainer} >
             
-                   {images.map(img =>
-                    <Image style={styles.postImg} source={{uri:img}} />)}
-                       
+                   {/* {images.map(img =>
+                    <Image style={styles.postImg} source={{uri:img}} />)} */}
+                        {data.map(post => <ProfileImage data={post} />)}
                 </View>
                 
                 <View key="2" >    

@@ -10,7 +10,7 @@ const HomeLayout = () => {
             tabBarShowLabel: true
         }} >
             <Tabs.Screen
-                name='index'
+                name='home'
                 options={{
 
                     title: "Нүүр хуудас",
