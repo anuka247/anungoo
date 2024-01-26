@@ -29,9 +29,6 @@ const Post  = ({data}) => {
             {/* Tab content */}
             <PagerView onPageSelected={onPageChange} style={styles.pagerView} initialPage={0}>
                 <View key="1" style={styles.postcontainer} >
-            
-                   {/* {images.map(img =>
-                    <Image style={styles.postImg} source={{uri:img}} />)} */}
                         {data.map(post => <ProfileImage data={post} />)}
                 </View>
                 

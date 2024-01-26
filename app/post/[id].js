@@ -1,14 +1,18 @@
-import { Image, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect } from 'react'
-import { Stack, useLocalSearchParams, useNavigation } from 'expo-router'
+import {  useLocalSearchParams, useNavigation } from 'expo-router'
 import { getPostById } from '../../data/index'
+import { AntDesign } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import Profile from '../../component/Profile';
 
-const Post = () => {
+const Post = ({}) => {
     const navigation = useNavigation()
     const params = useLocalSearchParams()
     const postData = getPostById(params.id)
 
-    console.log('id', params.id);
+    // console.log('id', params.id);
     console.log('postData', postData);
 
     // Хуудас анхны дуудагдах үед доторхи код 1 удаа ажиллана
@@ -18,26 +22,76 @@ const Post = () => {
     }, [])
 
     return (
-        <View style={styles.container} >
-{/*profile hayg */}
-            <View  style={styles.profileHayg} >
+        <View  >
+            <Profile data={postData}/>
+            
+{/*profile deed heseg*/}
+
+            {/* <View  style={styles.profileHayg}>
             <Image style={styles.pro} source={require('../img/my-img.jpg')}/>
             <Text style={styles.text1} >B.Anungoo</Text>
-                 </View>
+            </View> */}
 {/* zurag */}
-            <View style={styles.images}>
+
+            {/* <View >
             <Image style={styles.img} source={{ uri: postData.img }}  />
-            </View>
-{/* like  */}
+            </View> */}
+{/* like comment save  */}
+
+            {/* <View style={styles.btnContainer} >
             <View style={styles.like} >
+            <TouchableOpacity  style={styles.btn}>
+            <AntDesign name="hearto" size={24} color="black" />
+            </TouchableOpacity>
 
+            <TouchableOpacity  style={styles.btn}>
+            <AntDesign name="message1" size={24} color="black" />
+            </TouchableOpacity>
+
+            <TouchableOpacity  style={styles.btn}>
+            <Feather name="send" size={24} color="black" />
+            </TouchableOpacity>
             </View>
-{/* tailbar */}
-            <View style={styles.desc} >
+
+            <View  style={styles.row}>
+            <TouchableOpacity  style={styles.btn}>
+            <MaterialIcons name="save-alt" size={24} color="black" />
+            </TouchableOpacity>
+            </View>
+            </View> */}
+         
+{/*likedby  */}
+            {/* <View style={styles.container}>
+
+            <View style={styles.desc} > */}
+
+                {/* {data.likedBy.map( (p) => (
+                    <Image source={{uri:p.img}} style={styles.profileImg}/>
+                ))} */}
+
+            {/* </View>
+            <Text >
+                LikedBy 
+                <Text style={styles.text} > aminul_xd </Text>
+                and
+                <Text style={styles.text}> others</Text>
+            </Text>
             <Text>{postData.desc}</Text>
-            <Text> </Text>
-            </View>
 
+            <View style={styles.row}>
+                <Image style={styles.pro} source={require('../img/my-img.jpg')}/>
+                <TouchableOpacity>
+                <Text style={styles.text3} > Add a comment...</Text>
+                </TouchableOpacity>
+               
+                </View>
+                <View style={styles.row}>
+                <Text style={styles.year} > October 23, 2023</Text>
+                </View>
+               
+           
+
+            </View> */}
         </View>
     )
 }
@@ -45,46 +99,69 @@ const Post = () => {
 export default Post
 
 const styles = StyleSheet.create({
-    text1:{
-        fontSize:18,
-    },
-    profiledesc:{
+//     year:{
+//         fontSize:12,
+//         color:'gray',
+//     },
+//     text3:{
+//         color:'gray',
+//         fontSize:15,
+//     },
+//     text:{
+//         fontWeight:'bold',
+//     },
+//     desc:{
+//         justifyContent: 'flex-start',
+//         alignItems:'flex-start',
+       
 
-    },
-    pro:{
-        width:45,
-        height:45,
-        borderRadius:500,
-   },
-    like:{
-        borderWidth:1,
-        width:400,
-        height:45,
-    },
-    profileHayg:{
-        borderWidth:1,
-        width:400,
-        height:45,
-        marginBottom:5,
-        flexDirection:'row',
-        justifyContent:'flex-start',
-        alignItems:'center',
-    },
-    desc:{
-        justifyContent: 'flex-start',
-        alignItems:'flex-start'
-    },
-    container:{
-      flex:1,
-      margin:5,
-    },
-    images:{
-        justifyContent:'center',
-        alignItems:'center',
-    },
-    img:{
-        width:400,
-        height:400,
+//     },
+//     row:{
+//         flexDirection:'row',
+//         alignItems:'center'
+//     },
+//     btnContainer:{
+//     flexDirection:'row',
+//     justifyContent:'space-between',
+//     gap:13,
+//     paddingVertical:3,
+//     paddingHorizontal:10,
+//     },
+//     text1:{
+//         fontSize:18,
+//     },
+//     pro:{
+//         width:37,
+//         height:37,
+//         borderRadius:500,
+//    },
+//     like:{
+//         paddingVertical:12,
+//         gap:13,
+//         flexDirection:'row',
+//        alignContent:'center',
 
-    },
+//     },
+//     profileHayg:{
+//         flexDirection:'row',
+//         alignItems:'center',
+//         paddingVertical:5,
+//         paddingHorizontal:10,
+//         gap:10
+//     },
+ 
+//     container:{
+//         paddingVertical:1,
+//         paddingHorizontal:10,
+  
+//     },
+//     images:{
+//         justifyContent:'center',
+//         alignItems:'center',
+//     },
+//     img:{
+//         width:415,
+//         height:415,
+
+//     },
 })
