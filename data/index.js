@@ -9,39 +9,204 @@ export const postData = [
         profileImg:
           "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       },
+      {
+        userid: "urnaa_xd",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        userid: "amina_xd",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+    ],
+    Comment: [
+      {
+        userid: "aminul_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "cute ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "nice ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: " very good ",
+      },
     ],
   },
-  //  'https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  //  'https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  //  'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+
   {
     id: 2,
     desc: "My first post 2",
     img: "https://images.unsplash.com/photo-1523032217284-d9e49d6c5f04?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    likedBy: [
+      {
+        userid: "aminul_xd",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        userid: "anu",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        userid: "urnaa",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        userid: "amina_xd",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+    ],
+    Comment: [
+      {
+        userid: "aminul_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "cute ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "nice ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: " very good ",
+      },
+    ],
   },
 
   {
     id: 3,
     desc: "My first post 3",
     img: "https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    likedBy: [
+      {
+        userid: "aminul_xd",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+    ],
+    Comment: [
+      {
+        userid: "aminul_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "cute ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "nice ",
+      },
+    ],
   },
 
   {
     id: 4,
     desc: "My first post 4",
     img: "https://images.unsplash.com/photo-1533536201350-93ebe24101f5?q=80&w=1366&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    likedBy: [
+      {
+        userid: "aminul_xd",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+    ],
+    Comment: [
+      {
+        userid: "aminul_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "cute ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "nice ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: " very good ",
+      },
+    ],
   },
 
   {
     id: 5,
     desc: "My first post 5",
     img: "https://images.unsplash.com/photo-1530510004231-720218d936da?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    likedBy: [
+      {
+        userid: "aminul_xd",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+    ],
+    Comment: [
+      {
+        userid: "aminul_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "cute ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "nice ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: " very good ",
+      },
+      {
+        userid: "aminul_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "cute ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "nice ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: " very good ",
+      },
+    ],
   },
 
   {
     id: 6,
     desc: "My first post 6",
     img: "https://images.unsplash.com/photo-1609813744174-a0df83d477fe?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    likedBy: [
+      {
+        userid: "aminul_xd",
+        profileImg:
+          "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+    ],
+    Comment: [
+      {
+        userid: "aminul_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "cute ",
+      },
+      {
+        userid: "urnaa_xd",
+        img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        comment: "nice ",
+      },
+    ],
   },
 ];
 
