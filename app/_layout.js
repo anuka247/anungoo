@@ -6,7 +6,7 @@ export default function RootLayout() {
       screenOptions={{
         title: "instagram",
         headerStyle: {},
-
+        headerShown: false,
         headerTitleStyle: {
           fontWeight: "bold",
         },

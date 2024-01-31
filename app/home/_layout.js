@@ -12,7 +12,7 @@ const HomeLayout = () => {
       }}
     >
       <Tabs.Screen
-        name="home "
+        name="index"
         options={{
           title: "home",
           tabBarIcon: ({ focused, color, size }) => (
@@ -21,7 +21,7 @@ const HomeLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="about"
+        name="Profile"
         options={{
           title: "profile",
           tabBarIcon: ({ focused, color, size }) => (

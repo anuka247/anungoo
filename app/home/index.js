@@ -8,18 +8,12 @@ import Story from "../../component/story/Story";
 const Home = () => {
   const list = postData;
   return (
-    <View style={styles.container}>
-      {/* <View style={styles.row}>
-        <Text style={styles.garchig}>Instagram </Text>
-        <Feather name="send" size={24} color="black" style={styles.icon} />
-      </View> */}
-      <ScrollView style={{ flex: 1 }}>
-        <Story data={stories} />
-        {list.map((data) => (
-          <Profile data={postData} />
-        ))}
-      </ScrollView>
-    </View>
+    <ScrollView style={{ flex: 1 }}>
+      <Story data={stories} />
+      {list.map((data) => (
+        <Profile data={postData} />
+      ))}
+    </ScrollView>
   );
 };
 
