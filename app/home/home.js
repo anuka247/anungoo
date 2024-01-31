@@ -1,32 +1,31 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import { Feather } from "@expo/vector-icons";
+import Profile from "../../component/Profile";
+import { postData, stories } from "../../data";
+import StoryItem from "../../component/story/Story";
 
 const Home = () => {
+  const list = postData;
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <Text style={styles.garchig}>Instagram </Text>
         <Feather name="send" size={24} color="black" style={styles.icon} />
       </View>
-      {/* 
-      <View style={styles.row}>
-        <TouchableOpacity style={styles.story}>
-          <Image style={styles.pic} source={require("../img/my-img.jpg")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.story}>
-          <Image style={styles.pic} source={require("")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.story}>
-          <Image style={styles.pic} source={require("")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.story}>
-          <Image style={styles.pic} source={require("")} />
-        </TouchableOpacity>
-      </View> */}
+      <ScrollView style={{ flex: 1 }}>
+        {/* <StoryItem stories={stories} /> */}
+        {list.map((data) => (
+          <Profile data={postData} />
+        ))}
+      </ScrollView>
     </View>
   );
 };

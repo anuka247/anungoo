@@ -1,13 +1,6 @@
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  TextInput,
-} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useEffect } from "react";
-import { useLocalSearchParams, useNavigation } from "expo-router";
+import { Link, useLocalSearchParams, useNavigation } from "expo-router";
 import { getPostById } from "../data/index";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
@@ -16,6 +9,7 @@ import { postData } from "../data/index";
 
 const Profile = () => {
   const params = useLocalSearchParams();
+  // uzuuleh yostoi postiin dugaar
   const postId = params.id;
   // Бүх постын жагсаалтаас харуулах датагаа хайж олно
   const data = postData.find((post) => post.id == postId);
@@ -27,7 +21,7 @@ const Profile = () => {
 
   const likedBy = data.likedBy?.slice(0, 3) || [];
 
-  const firstLike = likedBy.length > 0 ? likedBy[0].userId : "";
+  const firstLike = likedBy.length > 0 ? likedBy[0].userid : "";
   const firstComment = data.comments?.length > 0 ? data.comments[0] : {};
 
   console.log("data", data);
@@ -69,7 +63,7 @@ const Profile = () => {
       {/*likedby  */}
       <View style={styles.container}>
         <View style={styles.desc}>
-          {data.likedBy?.map((p) => (
+          {likedBy?.map((p) => (
             <Image source={{ uri: p.profileImg }} style={styles.profileImg} />
           ))}
           {firstLike && (
@@ -80,38 +74,28 @@ const Profile = () => {
           )}
         </View>
 
-        <Text>{data.desc}</Text>
-
+        {/* post tailbar  */}
         <View style={styles.row}>
-          <TouchableOpacity></TouchableOpacity>
-          <Image style={styles.pro} source={require("../app/img/my-img.jpg")} />
-          <TouchableOpacity>
-            <Text style={styles.text3}> Add a comment...</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.row}>
-          <Text style={styles.year}> October 23, 2023</Text>
+          <Text style={styles.userId}> {data.userId}</Text>
+          <Text style={styles.desc}> {data.desc}</Text>
         </View>
       </View>
-      {/* Comments */}
-      {data.comments?.map((comment) => (
-        <View style={[styles.row, styles.gap13]}>
-          <Image source={{ uri: comment.img }} style={styles.proImg} />
-          <View>
-            <Text style={styles.commentUser}>{comment.userId}</Text>
-            <Text style={styles.comment}>{comment.comment}</Text>
-          </View>
-        </View>
-      ))}
-      {/* Write comment */}
-      <View style={[styles.row, styles.gap13]}>
-        <Image style={styles.pro} source={require("../app/img/my-img.jpg")} />
-        <View>
-          <TextInput
-            placeholder="Add a comment..."
-            placeholderTextColor={"#858585"}
-          />
-        </View>
+
+      {/* View all comment  */}
+      <View style={styles.container}>
+        <Link
+          href={{
+            pathname: "/comment",
+            params: { postId: postId },
+          }}
+          asChild
+        >
+          <TouchableOpacity>
+            <Text style={styles.viewAll}>
+              View all {data.comments.length} comment
+            </Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );
@@ -120,6 +104,15 @@ const Profile = () => {
 export default Profile;
 
 const styles = StyleSheet.create({
+  viewAll: {
+    color: "gray",
+    fontSize: 15,
+  },
+  proImg: {
+    width: 29,
+    height: 29,
+    borderRadius: 500,
+  },
   commentUser: {
     fontSize: 15,
     fontWeight: "600",
@@ -130,6 +123,7 @@ const styles = StyleSheet.create({
   likedByText: {
     fontSize: 15,
     fontWeight: "400",
+    padding: 5,
   },
   profileImg: {
     width: 29,
@@ -148,6 +142,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   desc: {
+    flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "flex-start",
   },

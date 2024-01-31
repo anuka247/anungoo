@@ -4,7 +4,7 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        title: "Нүүр",
+        title: "Comments",
         headerStyle: {
           // backgroundColor: 'gray',
         },
@@ -27,7 +27,7 @@ export default function RootLayout() {
         }}
       />
       <Stack.Screen
-        name="modal"
+        name="comment"
         options={{
           // Set the presentation mode to modal for our modal route.
           presentation: "modal",
