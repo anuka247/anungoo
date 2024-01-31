@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import StoryItem from "./Story";
+import Story from "./Story";
 
 const index = ({ stories }) => {
   return (
@@ -10,7 +10,7 @@ const index = ({ stories }) => {
       contentContainerStyle={styles.container}
     >
       {stories.map((obj) => (
-        <StoryItem data={obj} />
+        <Story data={obj} />
       ))}
     </ScrollView>
   );

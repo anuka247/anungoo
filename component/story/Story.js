@@ -4,22 +4,21 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
 } from "react-native";
 import React from "react";
 const border = require("../../app/home/img/story-border.png");
-const StoryItem = ({ data }) => {
+const Story = ({ data }) => {
   return (
     <TouchableOpacity style={styles.container}>
       <ImageBackground source={border} style={styles.border}>
-        <Image source={{ uri: data.storyImg }} style={styles.image} />
+        <Image source={{ uri: data.img }} style={styles.image} />
       </ImageBackground>
       <Text style={styles.userId}>{data.userId}</Text>
     </TouchableOpacity>
   );
 };
 
-export default StoryItem;
+export default Story;
 
 const styles = StyleSheet.create({
   container: {

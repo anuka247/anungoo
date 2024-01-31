@@ -12,17 +12,17 @@ const Profile = () => {
   // uzuuleh yostoi postiin dugaar
   const postId = params.id;
   // Бүх постын жагсаалтаас харуулах датагаа хайж олно
-  const data = postData.find((post) => post.id == postId);
+  const data = postData.find((post) => post.id == postId) || {};
   const navigation = useNavigation();
   // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна
   useEffect(() => {
     navigation.setOptions({ headerShown: true, headerBackTitleVisible: false });
   }, [navigation]);
 
-  const likedBy = data.likedBy?.slice(0, 3) || [];
+  const likedBy = data?.likedBy?.slice(0, 3) || [];
 
   const firstLike = likedBy.length > 0 ? likedBy[0].userid : "";
-  const firstComment = data.comments?.length > 0 ? data.comments[0] : {};
+  const firstComment = data?.comments?.length > 0 ? data.comments[0] : {};
 
   console.log("data", data);
 
@@ -92,7 +92,7 @@ const Profile = () => {
         >
           <TouchableOpacity>
             <Text style={styles.viewAll}>
-              View all {data.comments.length} comment
+              View all {data.comments?.length} comment
             </Text>
           </TouchableOpacity>
         </Link>

@@ -4,11 +4,9 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        title: "Comments",
-        headerStyle: {
-          // backgroundColor: 'gray',
-        },
-        // headerTintColor: '#fff',
+        title: "instagram",
+        headerStyle: {},
+
         headerTitleStyle: {
           fontWeight: "bold",
         },
