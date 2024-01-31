@@ -4,7 +4,7 @@ import { Entypo } from '@expo/vector-icons';
 import Post from '../../component/Post';
 import { postData } from '../../data/index';
 
-const About = () => {
+const Profile = () => {
     
   
     return (
@@ -70,7 +70,7 @@ const About = () => {
     )
 }
 
-export default About
+export default Profile
 
 const styles = StyleSheet.create({
     scrollView:{

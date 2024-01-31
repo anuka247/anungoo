@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import Profile from "../../component/Profile";
-import { postData, stories } from "../../data";
+import { postData } from "../../data";
 import StoryItem from "../../component/story/Story";
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
         <Feather name="send" size={24} color="black" style={styles.icon} />
       </View>
       <ScrollView style={{ flex: 1 }}>
-        {/* <StoryItem stories={stories} /> */}
+        <StoryItem stories={stories} />
         {list.map((data) => (
           <Profile data={postData} />
         ))}
