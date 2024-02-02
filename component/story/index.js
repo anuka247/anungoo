@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Story from "./Story";
+import Story from "./Story.1";
 
 const index = ({ stories }) => {
   return (

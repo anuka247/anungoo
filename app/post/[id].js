@@ -1,44 +1,44 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useEffect } from 'react'
-import {  useLocalSearchParams, useNavigation } from 'expo-router'
-import { getPostById } from '../../data/index'
-import { AntDesign } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import Profile from '../../component/Profile';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React, { useEffect } from "react";
+import { useLocalSearchParams, useNavigation } from "expo-router";
+import { getPostById } from "../../data/index";
+import { AntDesign } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
+import Profile from "../../component/PostDetail";
 
 const Post = ({}) => {
-    const navigation = useNavigation()
-    const params = useLocalSearchParams()
-    const postData = getPostById(params.id)
+  const navigation = useNavigation();
+  const params = useLocalSearchParams();
+  const postData = getPostById(params.id);
 
-    // console.log('id', params.id);
-    console.log('postData', postData);
+  // console.log('id', params.id);
+  console.log("postData", postData);
 
-    // Хуудас анхны дуудагдах үед доторхи код 1 удаа ажиллана
-    useEffect(() => {
-        // Пост хуудсан дээр толгой хэсгийг харуулах 
-        navigation.setOptions({ headerShown: true, headerTitle: 'Post' })
-    }, [])
+  // Хуудас анхны дуудагдах үед доторхи код 1 удаа ажиллана
+  useEffect(() => {
+    // Пост хуудсан дээр толгой хэсгийг харуулах
+    navigation.setOptions({ headerShown: true, headerTitle: "Post" });
+  }, []);
 
-    return (
-        <View  >
-            <Profile data={postData}/>
-            
-{/*profile deed heseg*/}
+  return (
+    <View>
+      <Profile data={postData} />
 
-            {/* <View  style={styles.profileHayg}>
+      {/*profile deed heseg*/}
+
+      {/* <View  style={styles.profileHayg}>
             <Image style={styles.pro} source={require('../img/my-img.jpg')}/>
             <Text style={styles.text1} >B.Anungoo</Text>
             </View> */}
-{/* zurag */}
+      {/* zurag */}
 
-            {/* <View >
+      {/* <View >
             <Image style={styles.img} source={{ uri: postData.img }}  />
             </View> */}
-{/* like comment save  */}
+      {/* like comment save  */}
 
-            {/* <View style={styles.btnContainer} >
+      {/* <View style={styles.btnContainer} >
             <View style={styles.like} >
             <TouchableOpacity  style={styles.btn}>
             <AntDesign name="hearto" size={24} color="black" />
@@ -59,17 +59,17 @@ const Post = ({}) => {
             </TouchableOpacity>
             </View>
             </View> */}
-         
-{/*likedby  */}
-            {/* <View style={styles.container}>
+
+      {/*likedby  */}
+      {/* <View style={styles.container}>
 
             <View style={styles.desc} > */}
 
-                {/* {data.likedBy.map( (p) => (
+      {/* {data.likedBy.map( (p) => (
                     <Image source={{uri:p.img}} style={styles.profileImg}/>
                 ))} */}
 
-            {/* </View>
+      {/* </View>
             <Text >
                 LikedBy 
                 <Text style={styles.text} > aminul_xd </Text>
@@ -92,76 +92,70 @@ const Post = ({}) => {
            
 
             </View> */}
-        </View>
-    )
-}
+    </View>
+  );
+};
 
-export default Post
+export default Post;
 
 const styles = StyleSheet.create({
-//     year:{
-//         fontSize:12,
-//         color:'gray',
-//     },
-//     text3:{
-//         color:'gray',
-//         fontSize:15,
-//     },
-//     text:{
-//         fontWeight:'bold',
-//     },
-//     desc:{
-//         justifyContent: 'flex-start',
-//         alignItems:'flex-start',
-       
-
-//     },
-//     row:{
-//         flexDirection:'row',
-//         alignItems:'center'
-//     },
-//     btnContainer:{
-//     flexDirection:'row',
-//     justifyContent:'space-between',
-//     gap:13,
-//     paddingVertical:3,
-//     paddingHorizontal:10,
-//     },
-//     text1:{
-//         fontSize:18,
-//     },
-//     pro:{
-//         width:37,
-//         height:37,
-//         borderRadius:500,
-//    },
-//     like:{
-//         paddingVertical:12,
-//         gap:13,
-//         flexDirection:'row',
-//        alignContent:'center',
-
-//     },
-//     profileHayg:{
-//         flexDirection:'row',
-//         alignItems:'center',
-//         paddingVertical:5,
-//         paddingHorizontal:10,
-//         gap:10
-//     },
- 
-//     container:{
-//         paddingVertical:1,
-//         paddingHorizontal:10,
-  
-//     },
-//     images:{
-//         justifyContent:'center',
-//         alignItems:'center',
-//     },
-//     img:{
-//         width:415,
-//         height:415,
-
-//     },
-})
+  //     year:{
+  //         fontSize:12,
+  //         color:'gray',
+  //     },
+  //     text3:{
+  //         color:'gray',
+  //         fontSize:15,
+  //     },
+  //     text:{
+  //         fontWeight:'bold',
+  //     },
+  //     desc:{
+  //         justifyContent: 'flex-start',
+  //         alignItems:'flex-start',
+  //     },
+  //     row:{
+  //         flexDirection:'row',
+  //         alignItems:'center'
+  //     },
+  //     btnContainer:{
+  //     flexDirection:'row',
+  //     justifyContent:'space-between',
+  //     gap:13,
+  //     paddingVertical:3,
+  //     paddingHorizontal:10,
+  //     },
+  //     text1:{
+  //         fontSize:18,
+  //     },
+  //     pro:{
+  //         width:37,
+  //         height:37,
+  //         borderRadius:500,
+  //    },
+  //     like:{
+  //         paddingVertical:12,
+  //         gap:13,
+  //         flexDirection:'row',
+  //        alignContent:'center',
+  //     },
+  //     profileHayg:{
+  //         flexDirection:'row',
+  //         alignItems:'center',
+  //         paddingVertical:5,
+  //         paddingHorizontal:10,
+  //         gap:10
+  //     },
+  //     container:{
+  //         paddingVertical:1,
+  //         paddingHorizontal:10,
+  //     },
+  //     images:{
+  //         justifyContent:'center',
+  //         alignItems:'center',
+  //     },
+  //     img:{
+  //         width:415,
+  //         height:415,
+  //     },
+});

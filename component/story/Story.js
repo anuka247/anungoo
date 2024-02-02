@@ -4,35 +4,51 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  View,
 } from "react-native";
 import React from "react";
-const border = require("../../app/home/img/story-border.png");
-const Story = ({ data }) => {
+import { stories } from "../../data";
+
+const Stories = () => {
+  const border = require("../../app/img/img/story-border.png");
+
   return (
     <TouchableOpacity style={styles.container}>
-      <ImageBackground source={border} style={styles.border}>
-        <Image source={{ uri: data.img }} style={styles.image} />
-      </ImageBackground>
-      <Text style={styles.userId}>{data.userId}</Text>
+      {stories.map((s) => (
+        <View>
+          <ImageBackground source={border} style={styles.border}>
+            <Image source={{ uri: s.storyImg }} style={[styles.image]} />
+          </ImageBackground>
+          <Text numberOfLines={1} style={styles.userId}>
+            {s.userId}
+          </Text>
+        </View>
+      ))}
+      <Text style={styles.userId}>{stories.userId} </Text>
     </TouchableOpacity>
   );
 };
 
-export default Story;
+export default Stories;
 
 const styles = StyleSheet.create({
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   container: {
     alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    gap: 12,
   },
   userId: {
     fontSize: 12,
     fontWeight: "400",
-    width: 67,
   },
   border: {
     width: 67,
     height: 67,
-
     justifyContent: "center",
     alignItems: "center",
   },

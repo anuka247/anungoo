@@ -7,14 +7,14 @@ const HomeLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         tabBarShowLabel: true,
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "home",
+          title: "Instagram ",
           tabBarIcon: ({ focused, color, size }) => (
             <AntDesign name="home" size={24} color="black" />
           ),
@@ -23,9 +23,9 @@ const HomeLayout = () => {
       <Tabs.Screen
         name="Profile"
         options={{
-          title: "profile",
+          title: "Profile",
           tabBarIcon: ({ focused, color, size }) => (
-            <AntDesign name="user" size={24} color="black" />
+            <AntDesign name="user" size={24} color="black" fontWeight="bold" />
           ),
         }}
       />

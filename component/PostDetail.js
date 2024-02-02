@@ -7,31 +7,37 @@ import { Feather } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { postData } from "../data/index";
 
-const Profile = () => {
-  const params = useLocalSearchParams();
-  // uzuuleh yostoi postiin dugaar
-  const postId = params.id;
-  // Бүх постын жагсаалтаас харуулах датагаа хайж олно
-  const data = postData.find((post) => post.id == postId) || {};
-  const navigation = useNavigation();
-  // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна
-  useEffect(() => {
-    navigation.setOptions({ headerShown: true, headerBackTitleVisible: false });
-  }, [navigation]);
+const PostDetail = ({ data }) => {
+  // const params = useLocalSearchParams();
+  // // uzuuleh yostoi postiin dugaar
+  // const postId = params.id;
+  // // Бүх постын жагсаалтаас харуулах датагаа хайж олно
+  // const data = postData.find((post) => post.id == postId) || {};
+  // const navigation = useNavigation();
+  // // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна
+  // useEffect(() => {
+  //   navigation.setOptions({ headerShown: true, headerBackTitleVisible: false });
+  // }, [navigation]);
 
-  const likedBy = data?.likedBy?.slice(0, 3) || [];
+  // const likedBy = data?.likedBy?.slice(0, 3) || [];
 
-  const firstLike = likedBy.length > 0 ? likedBy[0].userid : "";
-  const firstComment = data?.comments?.length > 0 ? data.comments[0] : {};
+  // const firstLike = likedBy.length > 0 ? likedBy[0].userid : "";
+  // const firstComment = data?.comments?.length > 0 ? data.comments[0] : {};
 
-  console.log("data", data);
+  // console.log("data", data);
+
+  const postId = data.id;
+  const commentLenght = data.comments.length;
+  const firstLike = data.likedBy[0];
+
+  const first3Like = data.likedBy.slice(0, 3);
 
   return (
     <View>
       {/*profile deed heseg*/}
       <View style={styles.profileHayg}>
         <Image style={styles.pro} source={require("../app/img/my-img.jpg")} />
-        <Text style={styles.text1}>B.Anungoo</Text>
+        <Text style={styles.text1}>B.Anungooo</Text>
       </View>
       {/* zurag */}
       <View>
@@ -61,17 +67,23 @@ const Profile = () => {
       </View>
 
       {/*likedby  */}
+
       <View style={styles.container}>
         <View style={styles.desc}>
-          {likedBy?.map((p) => (
-            <Image source={{ uri: p.profileImg }} style={styles.profileImg} />
+          {first3Like?.map((p, i) => (
+            <Image
+              key={p.profileImg + i}
+              source={{ uri: p.profileImg }}
+              style={styles.profileImg}
+            />
           ))}
-          {firstLike && (
-            <Text style={styles.likedByText}>
-              Liked by <Text style={styles.text}>{firstLike}</Text> and
-              <Text style={styles.text}> others</Text>
-            </Text>
-          )}
+          <Text style={styles.likedByText}>
+            Liked by
+            <Text style={styles.text}> {firstLike.userId} </Text>
+            {data.likedBy.length > 1 && (
+              <Text style={styles.text}>and others</Text>
+            )}
+          </Text>
         </View>
 
         {/* post tailbar  */}
@@ -101,7 +113,7 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default PostDetail;
 
 const styles = StyleSheet.create({
   viewAll: {
