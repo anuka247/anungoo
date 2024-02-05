@@ -160,3 +160,17 @@ const styles = StyleSheet.create({
     height: 27,
   },
 });
+
+
+
+
+
+
+
+
+
+// PS C:\Users\usp\Project1> git remote -v
+// origin  https://github.com/anuka247/anungoo.git (fetch)
+// origin  https://github.com/anuka247/anungoo.git (push)
+// PS C:\Users\usp\Project1> git clone https://github.com/anuka247/anungoo.git^C
+// PS C:\Users\usp\Project1> npm install^C

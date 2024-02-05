@@ -255,9 +255,29 @@ export const getPostById = (id) => {
   return postData.find((post) => post.id == id);
 };
 
-// const postData=[
-//      'https://images.unsplash.com/photo-1533158307587-828f0a76ef46?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-//      'https://images.unsplash.com/photo-1704439735567-11af78b213e3?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-//      'https://images.unsplash.com/photo-1678801868960-a0ab87e23f02?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-//      'https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-//  ]
+export const chats = [
+  {
+    id: 1,
+    userId: "anu_anungoo",
+    img: "https://images.unsplash.com/photo-1678801868960-a0ab87e23f02?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    lastMsg: { text: "nice", date: "19h" },
+    messageHistory: [{ text: "nice", date: "19h" }],
+    seen: false,
+  },
+  {
+    id: 2,
+    userId: "urnaa_urnaa",
+    img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    lastMsg: { text: "hello", date: "5h" },
+    messageHistory: [{ text: "hello", date: "5h" }],
+    seen: false,
+  },
+  {
+    id: 3,
+    userId: "shadow_lord",
+    img: "https://images.unsplash.com/photo-1618641986557-1ecd230959aa?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    lastMsg: { text: "hi", date: "2h" },
+    messageHistory: [{ text: "hi", date: "2h" }],
+    seen: false,
+  },
+];
