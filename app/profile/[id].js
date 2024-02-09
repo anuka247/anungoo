@@ -5,16 +5,17 @@ import { about, getPostById, postData, users } from "../../data/index";
 import Post from "../../component/Post";
 import About from "../../component/About";
 
-const Posts = ({}) => {
+const Profile = ({}) => {
   const navigation = useNavigation();
   const params = useLocalSearchParams();
-  const profileId = getPostById(params.id);
+  const profileId = params.id;
+
   // console.log('id', params.id);
-  console.log("profileId", profileId);
 
   const profileData = users.find((user) => user.userId == profileId);
 
   const myPosts = postData.filter((post) => post.userId === profileId);
+  console.log("myPosts", myPosts);
 
   // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна
   useEffect(() => {
@@ -46,7 +47,7 @@ const Posts = ({}) => {
   );
 };
 
-export default Posts;
+export default Profile;
 
 const styles = StyleSheet.create({
   container: {

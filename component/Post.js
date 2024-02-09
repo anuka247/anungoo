@@ -22,7 +22,7 @@ const Post = ({ data }) => {
   };
   console.log("data", data);
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ flex: 1 }}>
       {/* Tab buttons */}
       <View style={styles.btnContainer}>
         <TouchableOpacity

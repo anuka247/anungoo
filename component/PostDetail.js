@@ -16,7 +16,7 @@ const PostDetail = ({ data }) => {
   return (
     <View>
       {/*profile deed heseg*/}
-      <Link href={"/profile/" + data.id} asChild>
+      <Link href={"/profile/" + data.userId} asChild>
         <TouchableOpacity style={styles.profileHayg}>
           <Image style={styles.pro} source={require("../app/img/my-img.jpg")} />
           <Text style={styles.text1}>B.Anungooo</Text>
