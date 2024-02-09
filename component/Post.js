@@ -20,8 +20,9 @@ const Post = ({ data }) => {
     console.log(pageNumber);
     setSetselectedTab(pageNumber);
   };
+  console.log("data", data);
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView>
       {/* Tab buttons */}
       <View style={styles.btnContainer}>
         <TouchableOpacity
@@ -83,7 +84,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
   },
-  img: { backgroundColor: "black" },
+  img: {
+    backgroundColor: "black",
+  },
   container: {
     flex: 1,
   },

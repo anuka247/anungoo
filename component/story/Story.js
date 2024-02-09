@@ -15,14 +15,14 @@ const Stories = () => {
   return (
     <TouchableOpacity style={styles.container}>
       {stories.map((s) => (
-        <View>
+        <TouchableOpacity>
           <ImageBackground source={border} style={styles.border}>
             <Image source={{ uri: s.storyImg }} style={[styles.image]} />
           </ImageBackground>
           <Text numberOfLines={1} style={styles.userId}>
             {s.userId}
           </Text>
-        </View>
+        </TouchableOpacity>
       ))}
       <Text style={styles.userId}>{stories.userId} </Text>
     </TouchableOpacity>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: "center",
-    justifyContent: "center",
+    margin: 5,
     flexDirection: "row",
     gap: 12,
   },

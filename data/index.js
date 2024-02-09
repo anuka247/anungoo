@@ -1,7 +1,20 @@
+export const about = {
+  userId: "anu_anu",
+  name: "B.Anungoo",
+  img: "https://scontent.fuln4-3.fna.fbcdn.net/v/t39.30808-6/398112303_2377536509116252_1437881459049845734_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9c7eae&_nc_ohc=_SERBeyMtGkAX9NfbQA&_nc_ht=scontent.fuln4-3.fna&oh=00_AfAWZpXieDUNuB4EDLV5OmkBPLLeKpaZVrPjG12rjJXz6A&oe=65C710DF",
+  bio1: "Код сурж байгаа 15 настай",
+  bio2: "28 сургууль",
+  followers: 10,
+  following: 100,
+};
+
 export const postData = [
   {
     id: 1,
     desc: "My first post 1",
+    userId: "munkhuu247",
+    profileImage: "https://xsgames.co/randomusers/avatar.php?g=male",
+    like: 20,
     img: "https://plus.unsplash.com/premium_photo-1692455906215-dff2237582d7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     likedBy: [
       {
@@ -41,6 +54,8 @@ export const postData = [
 
   {
     id: 2,
+    profileImage: about.img,
+    userId: "anu_anu",
     desc: "My first post 2",
     img: "https://images.unsplash.com/photo-1523032217284-d9e49d6c5f04?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     likedBy: [
@@ -87,6 +102,9 @@ export const postData = [
   {
     id: 3,
     desc: "My first post 3",
+    userId: "munkhuu247",
+    profileImage: "https://xsgames.co/randomusers/avatar.php?g=male",
+    like: 20,
     img: "https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     likedBy: [
       {
@@ -153,6 +171,9 @@ export const postData = [
   {
     id: 5,
     desc: "My first post 5",
+    userId: "lemonboy",
+    profileImage: "https://xsgames.co/randomusers/avatar.php?g=male",
+    like: 20,
     img: "https://images.unsplash.com/photo-1530510004231-720218d936da?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     likedBy: [
       {
@@ -203,6 +224,9 @@ export const postData = [
   {
     id: 6,
     desc: "My first post 6",
+    userId: "anu_anu",
+    profileImage: about.img,
+    like: 20,
     img: "https://images.unsplash.com/photo-1609813744174-a0df83d477fe?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     likedBy: [
       {
@@ -268,16 +292,37 @@ export const chats = [
     id: 2,
     userId: "urnaa_urnaa",
     img: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    lastMsg: { text: "hello", date: "5h" },
-    messageHistory: [{ text: "hello", date: "5h" }],
+    lastMsg: { text: "helloo", date: "5h" },
+    messageHistory: [{ text: "helloo", date: "5h" }],
     seen: false,
   },
   {
     id: 3,
     userId: "shadow_lord",
     img: "https://images.unsplash.com/photo-1618641986557-1ecd230959aa?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    lastMsg: { text: "hi", date: "2h" },
-    messageHistory: [{ text: "hi", date: "2h" }],
+    lastMsg: { text: "hii", date: "2h" },
+    messageHistory: [{ text: "hii", date: "2h" }],
     seen: false,
+  },
+];
+
+export const users = [
+  {
+    userId: "lemonboy",
+    name: "Хишигсүрэн",
+    img: "https://randomuser.me/api/portraits/men/26.jpg",
+    bio1: "Код сурж байгаа 14 настай",
+    bio2: "14-р сургууль",
+    followers: 13,
+    following: 870,
+  },
+  {
+    userId: "munkhuu247",
+    name: "Мөнхжаргал",
+    img: "https://xsgames.co/randomusers/avatar.php?g=male",
+    bio1: "Код сурж байгаа 14 настай",
+    bio2: "73-р сургууль",
+    followers: 22,
+    following: 380,
   },
 ];

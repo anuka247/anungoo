@@ -5,27 +5,8 @@ import { getPostById } from "../data/index";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
-import { postData } from "../data/index";
 
 const PostDetail = ({ data }) => {
-  // const params = useLocalSearchParams();
-  // // uzuuleh yostoi postiin dugaar
-  // const postId = params.id;
-  // // Бүх постын жагсаалтаас харуулах датагаа хайж олно
-  // const data = postData.find((post) => post.id == postId) || {};
-  // const navigation = useNavigation();
-  // // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна
-  // useEffect(() => {
-  //   navigation.setOptions({ headerShown: true, headerBackTitleVisible: false });
-  // }, [navigation]);
-
-  // const likedBy = data?.likedBy?.slice(0, 3) || [];
-
-  // const firstLike = likedBy.length > 0 ? likedBy[0].userid : "";
-  // const firstComment = data?.comments?.length > 0 ? data.comments[0] : {};
-
-  // console.log("data", data);
-
   const postId = data.id;
   const commentLenght = data.comments.length;
   const firstLike = data.likedBy[0];
@@ -35,10 +16,12 @@ const PostDetail = ({ data }) => {
   return (
     <View>
       {/*profile deed heseg*/}
-      <View style={styles.profileHayg}>
-        <Image style={styles.pro} source={require("../app/img/my-img.jpg")} />
-        <Text style={styles.text1}>B.Anungooo</Text>
-      </View>
+      <Link href={"/profile/" + data.id} asChild>
+        <TouchableOpacity style={styles.profileHayg}>
+          <Image style={styles.pro} source={require("../app/img/my-img.jpg")} />
+          <Text style={styles.text1}>B.Anungooo</Text>
+        </TouchableOpacity>
+      </Link>
       {/* zurag */}
       <View>
         <Image style={styles.img} source={{ uri: data.img }} />

@@ -54,7 +54,6 @@ const Dm = () => {
           {chats.map((chat) => (
             <Link href={"/chats/" + chat.id} asChild>
               <TouchableOpacity>
-                <Text>TEST</Text>
                 <DmItem data={chat} />
               </TouchableOpacity>
             </Link>

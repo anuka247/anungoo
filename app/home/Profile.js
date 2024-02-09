@@ -1,17 +1,8 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  TabView,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import { useNavigation } from "expo-router";
 import React, { useEffect } from "react";
-import { Entypo } from "@expo/vector-icons";
-import Post from "../../component/Post";
-import { postData } from "../../data/index";
+import { about, postData } from "../../data/index";
+import About from "../../component/About";
 
 const Profile = () => {
   const navigation = useNavigation();
@@ -20,54 +11,16 @@ const Profile = () => {
   }, [navigation]);
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* zurag post follow heseg  */}
-      <View style={styles.followerHeader}>
-        <Image style={styles.img} source={require("../img/my-img.jpg")} />
-
-        <View style={styles.follower}>
-          <View style={styles.followerItem}>
-            <Text style={styles.followerText}>6 </Text>
-            <Text style={styles.followerText}> Posts</Text>
-          </View>
-        </View>
-        <View style={styles.follower}>
-          <View style={styles.followerItem}>
-            <Text style={styles.followerText}>0 </Text>
-            <Text style={styles.followerText}> Followers</Text>
-          </View>
-        </View>
-        <View style={styles.follower}>
-          <View style={styles.followerItem}>
-            <Text style={styles.followerText}>0 </Text>
-            <Text style={styles.followerText}> Following</Text>
-          </View>
-        </View>
-      </View>
-
-      {/* bio hseg  */}
-      <View style={styles.bio}>
-        <Text style={styles.biotext1}> B. Anungoo</Text>
-        <Text style={styles.biotext2}>hellooo.</Text>
-        <Text style={styles.biotext2}>byeeeeeee.</Text>
-      </View>
-
-      {/* edit */}
-      <View style={styles.edit}>
-        <TouchableOpacity style={styles.editbtn}>
-          <Text style={styles.editText}>Editi</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.editbtn}>
-          <Text style={styles.editText}>Saved</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* jijig heseg  */}
-      <View style={styles.sug}>
-        <Text style={styles.Text}>Suggested Highlights</Text>
-        <Entypo name="chevron-down" size={24} color="black" />
-      </View>
-      <Post data={postData} />
+      <About
+        img={about.img}
+        name={about.name}
+        bio1={about.bio1}
+        bio2={about.bio2}
+        followers={about.followers}
+        following={about.following}
+        postNum={postData.length}
+      />
+      {/* Үндсэн пост хэсэг */}
     </ScrollView>
   );
 };
@@ -160,14 +113,6 @@ const styles = StyleSheet.create({
     height: 27,
   },
 });
-
-
-
-
-
-
-
-
 
 // PS C:\Users\usp\Project1> git remote -v
 // origin  https://github.com/anuka247/anungoo.git (fetch)

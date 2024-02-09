@@ -2,9 +2,10 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
 const PostImage = ({ data }) => {
+  console.log("postimage", data.img);
   return (
-    <Link href={"/post/" + data.id} asChild>
-      <TouchableOpacity style={styles.button}>
+    <Link style={styles.button} href={"/post/" + data.id} asChild>
+      <TouchableOpacity>
         <Image source={{ uri: data.img }} style={styles.image} />
       </TouchableOpacity>
     </Link>
