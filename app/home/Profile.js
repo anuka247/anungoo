@@ -1,17 +1,48 @@
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView, Text } from "react-native";
 import { useNavigation } from "expo-router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { about, postData } from "../../data/index";
 import About from "../../component/About";
+import Post from "../../component/Post";
+import { getNews } from "../../services/firebaseConfig";
 
 const Profile = () => {
+  const [news, setNews] = useState([]);
+  useEffect(() => {
+    getNews().then((res) => {
+      console.log("size", res.size);
+
+      let tmpnews = [];
+      res.docs.map((doc) => {
+        console.log("DOC DATA", doc.data());
+        tmpnews.push(doc.data());
+      });
+
+      setNews(tmpnews);
+    });
+  }, []);
+  console.log("news", news);
   const navigation = useNavigation();
   useEffect(() => {
     navigation.setOptions({ headerShown: true, headerBackTitleVisible: false });
   }, [navigation]);
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <About
+      {news.map((n) => {
+        console.log("-----n", n.followers, n);
+        return (
+          <About
+            img={n.img}
+            name={n.name}
+            bio1={n.bio1}
+            bio2={n.bio2}
+            followers={n.followers}
+            following={n.following}
+            postNum={postData.length}
+          />
+        );
+      })}
+      {/* <About
         img={about.img}
         name={about.name}
         bio1={about.bio1}
@@ -19,8 +50,9 @@ const Profile = () => {
         followers={about.followers}
         following={about.following}
         postNum={postData.length}
-      />
+      /> */}
       {/* Үндсэн пост хэсэг */}
+      <Post data={postData} />
     </ScrollView>
   );
 };

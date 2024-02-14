@@ -42,7 +42,7 @@ const Profile = ({}) => {
     </ScrollView>
   ) : (
     <View style={styles.notfound}>
-      <Text style={styles.notfoundText}> Хэрэглэгч олдсонгүй</Text>
+      <Text style={styles.notfoundText}>Хэрэглэгч олдсонгүй</Text>
     </View>
   );
 };

@@ -18,8 +18,8 @@ const PostDetail = ({ data }) => {
       {/*profile deed heseg*/}
       <Link href={"/profile/" + data.userId} asChild>
         <TouchableOpacity style={styles.profileHayg}>
-          <Image style={styles.pro} source={require("../app/img/my-img.jpg")} />
-          <Text style={styles.text1}>B.Anungooo</Text>
+          <Image style={styles.pro} source={{ uri: data.profileImage }} />
+          <Text style={styles.text1}>{data.userId}</Text>
         </TouchableOpacity>
       </Link>
       {/* zurag */}
