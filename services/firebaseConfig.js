@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
-
+import { signInWithEmailAndPassword } from "firebase/auth";
 // Initialize Firebase
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyA_QlC2cPSTprTbDncg4jDjJpYydLwXbCk",
   authDomain: "minii-ur-8b921.firebaseapp.com",
   projectId: "minii-ur-8b921",
@@ -13,7 +13,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
 // Initialize Cloud Firestore and get a reference to the service
 export const db = getFirestore(app);
 

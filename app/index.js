@@ -4,11 +4,25 @@ import { router } from "expo-router";
 
 export default function Page() {
   return (
+    // <View style={styles.container}>
+    //   <Redirect href={"/login"} />
+
+    //   <Link href={"/login"}> </Link>
+
     <View style={styles.container}>
       <Redirect href={"/home"} />
 
       <Text>Page</Text>
       <Link href={"/home"}>game </Link>
+      
+
+      <View style={[styles.xogame, styles.shadow]}>
+        <Link href="/login">
+          {" "}
+          <Text style={styles.text1}>login</Text>
+        </Link>
+      </View>
+
 
       <View style={[styles.movie, styles.shadow]}>
         <Link href="/Movie">
