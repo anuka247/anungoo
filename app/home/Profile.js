@@ -5,6 +5,7 @@ import { about, postData } from "../../data/index";
 import About from "../../component/About";
 import Post from "../../component/Post";
 import { getNews } from "../../services/firebaseConfig";
+import { getAuth } from "firebase/auth";
 
 const Profile = () => {
   const [news, setNews] = useState([]);
@@ -22,6 +23,7 @@ const Profile = () => {
     });
   }, []);
   console.log("news", news);
+  console.log("profile", getAuth().currentUser.email);
   const navigation = useNavigation();
   useEffect(() => {
     navigation.setOptions({ headerShown: true, headerBackTitleVisible: false });
