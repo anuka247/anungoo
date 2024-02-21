@@ -31,12 +31,13 @@ export default function RootLayout() {
           presentation: "modal",
         }}
       />
+      <Stack.Screen
+        name="edit"
+        options={{
+          // Set the presentation mode to edit for our edit route.
+          presentation: "modal",
+        }}
+      />
     </Stack>
   );
 }
-
-
-
-
-
-

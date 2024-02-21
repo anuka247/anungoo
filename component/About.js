@@ -3,6 +3,7 @@ import React from "react";
 import Post from "./Post";
 import { postData } from "../data";
 import ProfileImage from "../app/PostImage";
+import { Link } from "expo-router";
 
 const About = ({ img, name, bio1, bio2, followers, following, postNum }) => {
   return (
@@ -33,9 +34,11 @@ const About = ({ img, name, bio1, bio2, followers, following, postNum }) => {
       </View>
       {/* Edit section */}
       <View style={styles.edit}>
-        <TouchableOpacity style={styles.editBtn}>
-          <Text style={styles.editText}>Edit Profile</Text>
-        </TouchableOpacity>
+        <Link href={"edit"} asChild>
+          <TouchableOpacity style={styles.editBtn}>
+            <Text style={styles.editText}>Edit Profile</Text>
+          </TouchableOpacity>
+        </Link>
         <TouchableOpacity style={styles.editBtn}>
           <Text style={styles.editText}>Saved</Text>
         </TouchableOpacity>
