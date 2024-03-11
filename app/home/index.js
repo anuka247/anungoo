@@ -1,14 +1,11 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
-import React, { useEffect, useState } from "react";
-import { Feather } from "@expo/vector-icons";
+import { StyleSheet, ScrollView } from "react-native";
+import React from "react";
 import PostDetail from "../../component/PostDetail";
 import { postData, stories } from "../../data";
 import Stories from "../../component/story/Story";
 import { getNews } from "../../services/firebaseConfig";
 
 const Home = () => {
-
-
   const list = postData;
   return (
     <ScrollView style={{ flex: 1 }}>

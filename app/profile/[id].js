@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, View, Text } from "react-native";
 import React, { useEffect } from "react";
 import { useLocalSearchParams, useNavigation } from "expo-router";
-import { about, getPostById, postData, users } from "../../data/index";
+import { postData, users } from "../../data/index";
 import Post from "../../component/Post";
 import About from "../../component/About";
 
